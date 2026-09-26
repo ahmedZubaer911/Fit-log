@@ -1,5 +1,6 @@
-import Hero from "@/components/hero";
-import Navbar from "@/components/navbar";
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+import WorkoutLibrary from "@/components/WorkoutLibrary";
 
 
 export default function Home() {
@@ -10,9 +11,7 @@ export default function Home() {
 
       {/* Library will go here */}
       <section id="library" className="min-h-screen bg-black">
-        <h2 className="px-6 py-16 text-3xl font-bold text-white">
-          Workout Library
-        </h2>
+        <WorkoutLibrary />
       </section>
     </main>
   );

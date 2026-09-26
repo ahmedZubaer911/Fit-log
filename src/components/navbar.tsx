@@ -36,19 +36,23 @@ export default function Navbar() {
 
         {/* Status badges */}
         <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2 text-sm text-[#9CA3AF]">
-            <span>Plan</span>
-            <span className="rounded-full bg-[#C2F800] px-3 py-1 font-semibold text-black">
-              0
-            </span>
-          </div>
+          <Link href={"/my-plan"}>
+            <div className="flex items-center gap-2 text-sm text-[#9CA3AF]">
+              <span>Plan</span>
+              <span className="rounded-full bg-[#C2F800] px-3 py-1 font-semibold text-black">
+                0
+              </span>
+            </div>
+          </Link>
 
-          <div className="flex items-center gap-2 text-sm text-[#9CA3AF]">
-            <span>Saved</span>
-            <span className="rounded-full border border-[#9CA3AF] px-3 py-1 font-semibold text-[#9CA3AF]">
-              0
-            </span>
-          </div>
+          <Link href={"/my-plan"}>
+            <div className="flex items-center gap-2 text-sm text-[#9CA3AF]">
+              <span>Saved</span>
+              <span className="rounded-full border border-[#9CA3AF] px-3 py-1 font-semibold text-[#9CA3AF]">
+                0
+              </span>
+            </div>
+          </Link>
         </div>
       </nav>
     </header>
