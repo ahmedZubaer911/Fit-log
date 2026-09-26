@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getWorkout } from "@/lib/api";
 import WorkoutActions from "@/components/WorkoutActions";
+import { notFound } from "next/navigation";
 
 interface WorkoutDetailsPageProps {
   params: Promise<{
@@ -12,7 +13,13 @@ export default async function WorkoutDetailsPage({
   params,
 }: WorkoutDetailsPageProps) {
   const { id } = await params;
-  const workout = await getWorkout(id);
+  let workout;
+
+  try {
+    workout = await getWorkout(id);
+  } catch {
+    notFound();
+  }
 
   return (
     <main className="min-h-screen bg-black px-4 py-10">
