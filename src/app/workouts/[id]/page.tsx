@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getWorkout } from "@/lib/api";
+import WorkoutActions from "@/components/WorkoutActions";
 
 interface WorkoutDetailsPageProps {
   params: Promise<{
@@ -126,15 +127,7 @@ export default async function WorkoutDetailsPage({
               </ol>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-4">
-              <button className="rounded-full bg-[#C2F800] px-6 py-3 font-semibold text-black hover:opacity-90">
-                ＋ Add to today&apos;s plan
-              </button>
-
-              <button className="rounded-full border border-[#9CA3AF] px-6 py-3 font-semibold text-[#9CA3AF] hover:border-white hover:text-white">
-                ♡ Save for later
-              </button>
-            </div>
+            <WorkoutActions workout={workout} />
           </div>
         </div>
       </div>

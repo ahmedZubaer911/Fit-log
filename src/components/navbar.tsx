@@ -1,10 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useFitLog } from "@/context/FitLogContext";
 
 export default function Navbar() {
+  const { todayPlan, savedWorkouts } = useFitLog();
+
   return (
     <header className="bg-black px-4 py-4">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-6 py-3">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
@@ -14,16 +19,16 @@ export default function Navbar() {
             height={40}
             className="h-8 w-auto"
           />
-          <p className="text-[32px]">FITLOG</p>
+          <p className="text-[32px] text-white">FITLOG</p>
         </Link>
 
         {/* Navigation */}
         <div className="flex items-center gap-8">
           <Link
             href="/workouts"
-            className="text-sm font-medium bg-zinc-800 h-10 w-28 flex justify-center items-center rounded-xl text-[#C2F800] hover:opacity-80"
+            className="rounded-full bg-[#C2F800] px-4 py-2 text-sm font-semibold text-black"
           >
-            Workouts
+            Workout
           </Link>
 
           <Link
@@ -36,22 +41,24 @@ export default function Navbar() {
 
         {/* Status badges */}
         <div className="flex items-center gap-4">
-          <Link href={"/my-plan"}>
-            <div className="flex items-center gap-2 text-sm text-[#9CA3AF]">
-              <span>Plan</span>
-              <span className="rounded-full bg-[#C2F800] px-3 py-1 font-semibold text-black">
-                0
-              </span>
-            </div>
+          <Link
+            href="/my-plan"
+            className="flex items-center gap-2 text-sm text-[#9CA3AF]"
+          >
+            <span>Plan</span>
+            <span className="rounded-full bg-[#C2F800] px-3 py-1 font-semibold text-black">
+              {todayPlan.length}
+            </span>
           </Link>
 
-          <Link href={"/my-plan"}>
-            <div className="flex items-center gap-2 text-sm text-[#9CA3AF]">
-              <span>Saved</span>
-              <span className="rounded-full border border-[#9CA3AF] px-3 py-1 font-semibold text-[#9CA3AF]">
-                0
-              </span>
-            </div>
+          <Link
+            href="/my-plan"
+            className="flex items-center gap-2 text-sm text-[#9CA3AF]"
+          >
+            <span>Saved</span>
+            <span className="rounded-full border border-[#9CA3AF] px-3 py-1 font-semibold text-[#9CA3AF]">
+              {savedWorkouts.length}
+            </span>
           </Link>
         </div>
       </nav>

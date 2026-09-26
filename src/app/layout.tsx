@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { FitLogProvider } from "@/context/FitLogContext";
+import { Toaster } from "react-hot-toast";
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,8 +16,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
     >
       <body className="min-h-full flex flex-col">
+        <FitLogProvider>
         <Navbar />
-        {children}</body>
+        {children}
+        <Toaster position="top-right" />
+        </FitLogProvider>
+        </body>
+
     </html>
   );
 }
