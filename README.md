@@ -2,7 +2,7 @@
 
 ### Train with intent. Log every set.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-FitLog-C2F800?style=for-the-badge\&logo=vercel\&logoColor=black)](https://fit-log-beta-one.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-FitLog-C2F800?style=for-the-badge\&logo=vercel\&logoColor=black)](https://fit-log-tan-mu.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge\&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge\&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge\&logo=tailwindcss)](https://tailwindcss.com/)
