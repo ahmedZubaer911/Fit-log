@@ -10,8 +10,6 @@ interface FitLogContextType {
   removeFromPlan: (id: number) => void;
   saveWorkout: (workout: Workout) => void;
   removeFromSaved: (id: number) => void;
-  completedWorkouts: number[];
-  markAsDone: (id: number) => void;
 }
 
 const FitLogContext = createContext<FitLogContextType | undefined>(undefined);
@@ -19,7 +17,6 @@ const FitLogContext = createContext<FitLogContextType | undefined>(undefined);
 export function FitLogProvider({ children }: { children: React.ReactNode }) {
   const [todayPlan, setTodayPlan] = useState<Workout[]>([]);
   const [savedWorkouts, setSavedWorkouts] = useState<Workout[]>([]);
-  const [completedWorkouts, setCompletedWorkouts] = useState<number[]>([]);
 
   function addToPlan(workout: Workout) {
     setTodayPlan((current) => {
@@ -50,15 +47,6 @@ export function FitLogProvider({ children }: { children: React.ReactNode }) {
       current.filter((workout) => workout.id !== id),
     );
   }
-  function markAsDone(id: number) {
-    setCompletedWorkouts((current) => {
-      if (current.includes(id)) {
-        return current;
-      }
-
-      return [...current, id];
-    });
-  }
 
   return (
     <FitLogContext.Provider
@@ -69,8 +57,6 @@ export function FitLogProvider({ children }: { children: React.ReactNode }) {
         removeFromPlan,
         saveWorkout,
         removeFromSaved,
-        completedWorkouts,
-        markAsDone,
       }}
     >
       {children}

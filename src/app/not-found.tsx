@@ -4,9 +4,6 @@ export default function NotFound() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-black px-4">
       <div className="text-center">
-        <p className="text-sm font-semibold tracking-[0.2em] text-[#C2F800]">
-          FITLOG
-        </p>
 
         <h1 className="mt-4 text-6xl font-bold text-white">404</h1>
 
