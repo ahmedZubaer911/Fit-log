@@ -22,11 +22,13 @@ export default async function WorkoutDetailsPage({
   }
 
   return (
-    <main className="min-h-screen bg-black px-4 py-10">
+    <main className="min-h-screen bg-black px-4 py-10 sm:py-16">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2 md:gap-10">
+          {" "}
           {/* Image */}
-          <div className="relative min-h-125 overflow-hidden rounded-2xl md:min-h-162.5">
+          <div className="relative min-h-90 overflow-hidden rounded-2xl sm:min-h-110 md:min-h-162.5">
+            {" "}
             <Image
               src={workout.image}
               alt={workout.name}
@@ -34,14 +36,15 @@ export default async function WorkoutDetailsPage({
               className="object-cover"
             />
           </div>
-
           {/* Details */}
           <div>
-            <h1 className="mt-5 text-4xl font-bold uppercase text-white md:text-5xl">
+            <h1 className="mt-5 text-3xl font-bold uppercase text-white sm:text-4xl md:text-5xl">
+              {" "}
               {workout.name}
             </h1>
-
-            <p className="mt-4 text-[#9CA3AF]">{workout.description}</p>
+            <p className="mt-4 text-sm leading-6 text-[#9CA3AF] sm:text-base">
+              {workout.description}
+            </p>{" "}
             <div className="flex flex-wrap gap-2 pt-5">
               {workout.muscleGroups.map((group) => (
                 <span
@@ -52,10 +55,9 @@ export default async function WorkoutDetailsPage({
                 </span>
               ))}
             </div>
-
             <div className="mt-8 overflow-hidden rounded-2xl border border-zinc-800">
               <div className="divide-y divide-zinc-800">
-                <div className="flex items-center justify-between p-4">
+                <div className="flex items-center justify-between gap-4 p-4">
                   <span className="text-xs font-semibold text-[#9CA3AF]">
                     EQUIPMENT
                   </span>
@@ -64,7 +66,7 @@ export default async function WorkoutDetailsPage({
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between p-4">
+                <div className="flex items-center justify-between gap-4 p-4">
                   <span className="text-xs font-semibold text-[#9CA3AF]">
                     DIFFICULTY
                   </span>
@@ -73,21 +75,21 @@ export default async function WorkoutDetailsPage({
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between p-4">
+                <div className="flex items-center justify-between gap-4 p-4">
                   <span className="text-xs font-semibold text-[#9CA3AF]">
                     SETS
                   </span>
                   <span className="text-sm text-white">{workout.sets}</span>
                 </div>
 
-                <div className="flex items-center justify-between p-4">
+                <div className="flex items-center justify-between gap-4 p-4">
                   <span className="text-xs font-semibold text-[#9CA3AF]">
                     REPS
                   </span>
                   <span className="text-sm text-white">{workout.reps}</span>
                 </div>
 
-                <div className="flex items-center justify-between p-4">
+                <div className="flex items-center justify-between gap-4  p-4">
                   <span className="text-xs font-semibold text-[#9CA3AF]">
                     DURATION
                   </span>
@@ -96,7 +98,7 @@ export default async function WorkoutDetailsPage({
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between p-4">
+                <div className="flex items-center justify-between gap-4 p-4">
                   <span className="text-xs font-semibold text-[#9CA3AF]">
                     CALORIES
                   </span>
@@ -105,7 +107,7 @@ export default async function WorkoutDetailsPage({
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between p-4">
+                <div className="flex items-center justify-between gap-4 p-4">
                   <span className="text-xs font-semibold text-[#9CA3AF]">
                     RATING
                   </span>
@@ -115,17 +117,16 @@ export default async function WorkoutDetailsPage({
                 </div>
               </div>
             </div>
-
             <div className="mt-10">
               <h2 className="text-xl font-bold">INSTRUCTIONS</h2>
 
               <ol className="mt-5 space-y-5">
                 {workout.instructions.map((instruction, index) => (
-                  <li key={instruction} className="flex gap-4">
+                  <li key={instruction} className="flex gap-3 sm:gap-4">
+                    {" "}
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold text-[#9CA3AF]">
                       {index + 1}.
                     </span>
-
                     <p className="pt-1 text-sm leading-6 text-[#b5bbc5]">
                       {instruction}
                     </p>
@@ -133,7 +134,6 @@ export default async function WorkoutDetailsPage({
                 ))}
               </ol>
             </div>
-
             <WorkoutActions workout={workout} />
           </div>
         </div>

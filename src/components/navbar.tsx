@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-black px-4 py-4">
-      <nav className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 rounded-2xl px-4 py-3 sm:px-6">
+      <nav className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 rounded-2xl px-3 py-3 sm:gap-4 sm:px-6">
         {" "}
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -18,9 +18,9 @@ export default function Navbar() {
             alt="FitLog"
             width={120}
             height={40}
-            className="h-8 w-auto"
+            className="h-8 w-auto sm:h-9"
           />
-          <p className="text-[32px] text-white">FITLOG</p>
+          <p className="text-[24px] text-white sm:text-[32px]">FITLOG</p>
         </Link>
         {/* Navigation */}
         <div className="flex items-center gap-8">
@@ -39,7 +39,7 @@ export default function Navbar() {
           </Link>
         </div>
         {/* Status badges */}
-        <div className="flex items-center gap-4">
+        <div className="hidden items-center gap-2 sm:flex sm:gap-4">
           <Link
             href="/my-plan"
             className="flex items-center gap-2 text-sm text-[#9CA3AF]"

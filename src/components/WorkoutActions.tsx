@@ -30,7 +30,8 @@ export default function WorkoutActions({ workout }: WorkoutActionsProps) {
   }
 
   return (
-    <div className="mt-10 flex flex-wrap gap-4">
+    <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
+      {" "}
       <button
         onClick={handleAddToPlan}
         disabled={isAdded}
@@ -42,7 +43,6 @@ export default function WorkoutActions({ workout }: WorkoutActionsProps) {
       >
         {isAdded ? "✓ Added to today's plan" : "Add to today's plan"}
       </button>
-
       <button
         onClick={handleSave}
         disabled={isSaved}

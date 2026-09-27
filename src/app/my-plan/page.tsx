@@ -58,39 +58,43 @@ export default function MyPlanPage() {
   }
 
   return (
-    <main className="min-h-screen bg-black px-4 py-12">
+    <main className="min-h-screen bg-black px-4 py-8 sm:py-12">
+      {" "}
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <div className="mb-10">
-          <h1 className="mt-2 text-4xl font-bold uppercase text-white md:text-5xl">
+        <div className="mb-8 sm:mb-10">
+          <h1 className="mt-2 text-3xl font-bold uppercase text-white sm:text-4xl md:text-5xl">
+            {" "}
             MY PLAN
           </h1>
-
           <p className="mt-4 text-[#9CA3AF]">
             Cap of five lifts for today. Finish them, then load more.
           </p>
         </div>
 
         {/* Metrics */}
-        <div className="mb-10 rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
+        <div className="mb-8 rounded-2xl border border-zinc-800 bg-zinc-900 p-4 sm:mb-10 sm:p-6">
           <div className="grid grid-cols-3">
             <div className="text-center">
               <p className="text-sm text-[#9CA3AF]">EXERCISES</p>
-              <p className="mt-2 text-3xl font-bold text-white">
+              <p className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+                {" "}
                 {workouts.length}
               </p>
             </div>
 
             <div className="border-x border-zinc-800 text-center">
               <p className="text-sm text-[#9CA3AF]">MINUTES</p>
-              <p className="mt-2 text-3xl font-bold text-white">
+              <p className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+                {" "}
                 {totalMinutes}
               </p>
             </div>
 
             <div className="text-center">
               <p className="text-sm text-[#9CA3AF]">CALORIES</p>
-              <p className="mt-2 text-3xl font-bold text-white">
+              <p className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+                {" "}
                 {totalCalories}
               </p>
             </div>
@@ -179,10 +183,11 @@ export default function MyPlanPage() {
             return (
               <div
                 key={workout.id}
-                className="flex min-h-45 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900"
+                className="flex min-h-45 flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 sm:flex-row"
               >
                 {/* Image */}
-                <div className="relative w-48 shrink-0">
+                <div className="relative h-52 w-full shrink-0 sm:h-auto sm:w-48">
+                  {" "}
                   <Image
                     src={workout.image}
                     alt={workout.name}
@@ -192,27 +197,25 @@ export default function MyPlanPage() {
                 </div>
 
                 {/* Workout information */}
-                <div className="flex flex-1 flex-col justify-center px-6 py-5">
+                <div className="flex flex-1 flex-col justify-center px-5 py-5 sm:px-6">
+                  {" "}
                   <h2 className="text-xl font-bold uppercase text-white">
                     {workout.name}
                   </h2>
-
                   <p className="mt-1 text-sm text-[#9CA3AF]">
                     {workout.equipment}
                   </p>
-
                   {/* Stats — one horizontal row */}
-                  <div className="mt-5 flex items-center gap-6 text-sm text-[#9CA3AF]">
+                  <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#9CA3AF]">
+                    {" "}
                     <span className="inline-flex items-center gap-1.5">
                       <Clock3 size={16} />
                       {workout.duration} min
                     </span>
-
                     <span className="inline-flex items-center gap-1.5">
                       <Flame size={16} />
                       {workout.caloriesBurned} kcal
                     </span>
-
                     <span className="inline-flex items-center gap-1.5">
                       <Star size={16} />
                       {workout.rating}
@@ -221,14 +224,14 @@ export default function MyPlanPage() {
                 </div>
 
                 {/* Actions — one horizontal row */}
-                <div className="flex shrink-0 items-center gap-3 px-5">
+                <div className="flex shrink-0 flex-wrap items-center gap-3 px-5 pb-5 max-sm:w-full max-sm:justify-start sm:max-md:w-40 sm:max-md:justify-center sm:max-md:content-center sm:px-4 sm:pb-5">
+                  {" "}
                   <Link
                     href={`/workouts/${workout.id}`}
                     className="rounded-full border border-zinc-700 px-4 py-2 text-center text-sm font-semibold text-white hover:border-[#C2F800] hover:text-[#C2F800]"
                   >
                     View Details
                   </Link>
-
                   {activeTab === "plan" && (
                     <button
                       onClick={() => handleDone(workout.id)}
@@ -238,7 +241,6 @@ export default function MyPlanPage() {
                       Mark as Done
                     </button>
                   )}
-
                   <button
                     onClick={() => handleRemove(workout.id)}
                     className="inline-flex items-center justify-center rounded-full border border-zinc-700 p-2 text-[#9CA3AF] hover:border-red-400 hover:text-red-400"
