@@ -25,6 +25,10 @@ export function FitLogProvider({ children }: { children: React.ReactNode }) {
         return current;
       }
 
+      if (current.length >= 5) {
+        return current;
+      }
+
       return [...current, workout];
     });
   }

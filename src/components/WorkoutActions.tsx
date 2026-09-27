@@ -18,6 +18,11 @@ export default function WorkoutActions({ workout }: WorkoutActionsProps) {
   function handleAddToPlan() {
     if (isAdded) return;
 
+    if (todayPlan.length >= 5) {
+      toast.error("Today's plan is full");
+      return;
+    }
+
     addToPlan(workout);
     toast.success("Added to today's plan");
   }
