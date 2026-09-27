@@ -13,7 +13,7 @@
 
 ## 🌐 Live Demo
 
-### 👉 [Open FitLog](https://fit-log-beta-one.vercel.app/)
+### 👉 [Open FitLog](https://fit-log-tan-mu.vercel.app/)
 
 FitLog provides a dark, responsive workout experience with a library of **12 exercises covering major muscle groups**, including workout duration, calories, equipment, and ratings.
 
